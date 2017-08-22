@@ -13,8 +13,11 @@ class GifContent extends Component {
           <iframe src={this.props.gif.embed_url} frameBorder="0" className="giphy-embed" allowFullScreen title={this.props.gif.id}></iframe>
           <div className="card-body">
             <h4 className="card-title">
-              <Link to={{
-                pathname: `/cats/${this.props.gif.id}` }}>
+              <Link
+                to={{
+                pathname: `/cats/${this.props.gif.id}`,
+                state: { link: this.props.gif.embed_url }
+              }}>
                 <p className="text-center">{ this.props.gif.id }</p>
               </Link>
             </h4>
